@@ -1,0 +1,4 @@
+Để tạo trang, cần tạo cấu trúc chuẩn HTML5 với <!DOCTYPE html>, <html>, <head> và <body>, vscode có hỗ trợ phần này (gõ ! + tab)
+Đặt tiêu đề trong <header>, bao bằng <h1> để nổi bật
+Chia nội dụng chính thành các <section>
+Cuối trang tạo <footer> chứa MSSV và ngày tạo
