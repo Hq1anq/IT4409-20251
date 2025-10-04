@@ -1,0 +1,64 @@
+caption {
+    caption-side: bottom;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+h1 {
+    margin: 20px;
+}
+
+section {
+    margin: 20px;
+}
+
+button {
+    padding: 5px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 0 10px;
+    background-color: lemonchiffon;
+}
+
+button:hover {
+    background-color: blanchedalmond;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+td, th {
+    padding: 5px 10px;
+    border: solid 1px black;
+}
+
+td {
+    text-align: center;
+}
+
+tr:nth-child(even){background-color: honeydew;}
+
+tr:hover {
+    background-color: lightcyan;
+}
+
+#personalInfo {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#actionBtn {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 20px 30px;
+    border-radius: 10px;
+    background-color: aquamarine;
+    width: fit-content;
+}
+
+#table-container {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+}

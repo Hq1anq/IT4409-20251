@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Hide Text</title>
+</head>
+<body>
+    <section>
+        <h2>Ex1</h2>
+        <label for="num">Calculate factorial</label>
+        <input id="num" type="number">
+        <p id="result"></p>
+    </section>
+
+    <section>
+        <h2>Ex3</h2>
+        <button id="showHideBtn">Show</button>
+        <p id="showHideText">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Amet, consectetur?</p>
+    </section>
+
+    <section>
+        <h2>Ex4</h2>
+        <input id="inputItem" type="text">
+        <button id="addBtn">Add</button>
+        <ul></ul>
+    </section>
+
+    <script>
+        const inputNum = document.getElementById("num");
+        const facRes = document.getElementById("result");
+
+        function factorial(num) {
+            if (num <= 1) return 1;
+            return num * factorial(num - 1);
+        }
+
+        inputNum.addEventListener("keydown", (event) => {
+            if (event.key === "Enter") {
+                const inputNumber = inputNum.value;
+                facRes.innerHTML = `${inputNumber ? inputNumber : 0}! = ${factorial(inputNumber)}`;
+            }
+        });
+
+        console.log(factorial(8));
+        const showHideBtn = document.getElementById("showHideBtn");
+        const content = document.getElementById("showHideText");
+
+        showHideBtn.addEventListener("click", () => {
+            if (showHideBtn.textContent == "Show") {
+                showHideBtn.textContent = "Hide";
+                content.style.display = "none";
+            }
+            else {
+                showHideBtn.textContent = "Show";
+                content.style.display = "";
+            }
+        });
+
+        const addBtn = document.getElementById("addBtn");
+        const inputItem = document.getElementById("inputItem");
+        const unorderList = document.querySelector("ul");
+        let ulHtml = ``;
+
+        addBtn.addEventListener("click", () => {
+            const newItemContent = inputItem.value.trim();
+            if (newItemContent) {
+                ulHtml += `<li>${newItemContent}</li>`;
+                unorderList.innerHTML = ulHtml;
+            }
+        })
+    </script>
+</body>
+</html>

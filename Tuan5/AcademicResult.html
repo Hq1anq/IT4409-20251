@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AcademicResult</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Kết quả học tập</h1>
+    <section id="personalInfo">
+        <fieldset style="width: fit-content">
+            <legend>Thông tin cá nhân</legend>
+            <p><strong>Họ và tên: </strong>Trịnh Hoàng Giang <br>
+                <strong>MSSV: </strong>20235067 <br>
+                <strong>Email: </strong>Giang.TH235067@sis.hust.edu.vn
+            </p>
+        </fieldset>
+    </section>
+
+    <section id="actionBtn">
+        <button id="highlightBtn">Highlight</button>
+        <button id="calcGPAbtn">GPA</button>
+        <button id="filterBtn">Filter</button>
+        <button id="sortBtn">Sort</button>
+    </section>
+
+    <section id="table-container">
+        <table>
+            <caption>Kết quả học tập 2 kỳ trước</caption>
+            <thead>
+                <tr>
+                    <th>Học Kỳ</th>
+                    <th>Mã Học Phần</th>
+                    <th style="text-align: left;">Tên Học Phần</th>
+                    <th>Số Tín Chỉ</th>
+                    <th>Điểm Số</th>
+                    <th>Điểm Chữ</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+        <table id="gpaDisplay" style="display: none;">
+            <thead>
+                <tr>
+                    <th>Học kỳ</th>
+                    <th>GPA</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
