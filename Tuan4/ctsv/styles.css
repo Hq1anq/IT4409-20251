@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    font-family: Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,Arial,sans-serif;
 }
 
 .navbar-top,
@@ -9,6 +10,34 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.navbar-top img {
+    max-width: 50px;
+    width: auto;
+    margin-right: 20px;
+}
+
+.box-img div {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.navbar-list, .navbar-top {
+    margin: 0 40px;
+}
+
+.navbar-top {
+    margin: 0 80px;
+}
+
+.navbar-list a {
+    padding: 20px;
+    width: 100%;
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
 }
 
 .navbar-left {
@@ -30,6 +59,28 @@ img {
 
 ul {
     list-style-type: none;
+    line-height: 1.6;
+}
+
+main {
+    display: flex;
+    gap: 10px;
+    margin: 4vw 5vw;
+}
+
+#main-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#main-right {
+    flex: 2;
+}
+
+#main-left-top ul {
+    padding: 4vw 0 0.5vw 1vw;
 }
 
 a {
@@ -41,10 +92,7 @@ header {
     color: #fff;
 }
 
-.main-left {
-    width: 20vw;
-    margin-left: 5vw;
-    margin-top: 4vw;
+.card {
     position: relative;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     border-radius: 20px;
@@ -57,12 +105,82 @@ header {
 
 .avatar {
     position: absolute;
-    left: 50%;
+    left: 30%;
     transform: translate(-50%, -50%);
 }
 
 .avatar img {
-    width: 7vw;
+    width: 10vw;
+    height: 10vw;
     border-radius: 50%;
     object-fit: cover;
+    object-position: center 25%;
+}
+
+#main-left-bottom, #main-right {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 20px 20px 30px;
+}
+
+#main-left-bottom ul {
+    padding: 0;
+}
+
+.tab-list {
+    display: flex;
+    border-bottom: 1px solid #e4e7ed;
+}
+
+.tab-list div {
+    padding: 10px 20px;
+    border: 1px solid #e4e7ed;
+    border-bottom: 0;
+}
+
+.tab-list div:first-child {
+    color: #409eff;
+    border-top-left-radius: 4px;
+}
+
+.tab-list div:last-child {
+    border-top-right-radius: 4px;
+}
+
+.card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly
+}
+
+.card-body h4 {
+    width: max-content;
+    font-weight: 700;
+    font-size: 18px;
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 10px
+}
+
+.card-body div div {
+    display: flex;
+    gap: 100px;
+}
+
+.card-body p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+#family strong {
+    display: block;
+    padding-top: 20px;
+}
+
+#graph-container {
+    margin: auto;
+    max-width: 90%;
+    padding: 4vw 0 0.5vw 1vw;
+    display: flex;
+    justify-content: space-evenly;
 }
