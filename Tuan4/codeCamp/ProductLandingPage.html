@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Landing Page</title>
+    <style>
+        body {
+            margin: 0;
+            background: #000;
+            color: #fff;
+            font-family: 'SamsungOne',arial,sans-serif;
+        }
+
+        header {
+            background: #fff;
+            position: sticky;
+            top: 0;
+            align-items: center;
+            width: 100%;
+        }
+
+        header div {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            border-bottom: solid 2px #ccc;
+        }
+
+        nav {
+            padding: 10px 30px;
+        }
+
+        header ul {
+            margin: auto;
+            list-style: none;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-right: 20px;
+            padding: 0;
+        }
+
+        header a {
+            text-decoration: none;
+            color: black;
+            font-weight: bold;
+        }
+
+        #backgroundImage {
+            width: 100%;
+            height: auto;
+            z-index: -1;
+        }
+
+        #header-text {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: absolute;
+            top: 50%;
+            left: 10%;
+            color: white;
+        }
+
+        #header-text h1 {
+            font-size: 49px;
+            margin: 0;
+        }
+
+        #header-text p {
+            text-align: center;
+        }
+
+        #header-text a {
+            background-color: #2c69e2;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 20px;
+            margin-top: 10px;
+        }
+
+        form {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        form input[type="email"] {
+            padding: 10px;
+            border-radius: 10px;
+            width: 200px;
+        }
+
+        form input[type="submit"] {
+            padding: 10px 20px;
+            border-radius: 20px;
+            border: none;
+            background-color: #2c69e2;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        #top-features, #highlight {
+            max-width: 80%;
+            margin: auto;
+            padding: 50px 20px;
+        }
+
+        #card-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .card {
+            background: #1c1c1c;
+            padding: 30px 12px;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        #highlight-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 768px) {
+            #card-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            header div {
+                padding: 5px;
+            }
+
+            form input[type="email"] {
+                width: 100px;
+            }
+
+            form input[type="submit"] {
+                padding: 10px;
+            }
+
+            nav {
+                padding: 10px;
+            }
+
+            ul {
+                justify-content: space-around;
+            }
+
+            #header-text h1 {
+                font-size: 38px;
+            }
+
+            #header-text {
+                position: static;
+                margin: 20px auto;
+                top: auto;
+                left: auto;
+            }
+
+            #header-text p {
+                font-size: 14px;
+            }
+
+            iframe {
+                width: 100%;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div>
+            <img src="samsungLogo.png" alt="samsungLogo" id="header-img">
+            <form action="https://www.freecodecamp.com/email-submit" id="form">
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                <input type="submit" id="submit" value="Get Started">
+            </form>
+        </div>
+        <nav id="nav-bar">
+            <ul>
+                <li>
+                    <a href="#introduction" class="nav-link">Introduction</a>
+                </li>
+                <li>
+                    <a href="#top-features" class="nav-link">Top features</a>
+                </li>
+                <li>
+                    <a href="#highlight" class="nav-link">Highlight</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <section id="introduction">
+        <img src="galaxy-s25-ultra-bg.png" alt="backgroundImage" id="backgroundImage">
+        <div id="header-text">
+            <h1>Galaxy S25 Ultra</h1>
+            <img src="galaxy-s25-ultra-AI-text.png" alt="galaxyAIimage">
+            <p>Limited time up to $940 savings with exclusive storage upgrade on us</p>
+            <a href="https://samsung.com/us/smartphones/galaxy-s25-ultra/buy/" target="_blank">Buy now</a>
+        </div>
+    </section>
+    <section id="top-features">
+        <h1>Top features</h2>
+        <div id="card-container">
+            <div class="card">
+                <svg xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 37 37" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M5.04545 1.68182C3.19738 1.68182 1.68182 3.19738 1.68182 5.04545V37H0V5.04545C0 2.26853 2.26853 0 5.04545 0H37V1.68182H5.04545Z" fill="white"/>
+                    <path d="M24.7647 20.5183C24.7647 22.158 23.4613 23.4614 21.8215 23.4614C20.1818 23.4614 18.8784 22.158 18.8784 20.5183C18.8784 18.8785 20.1818 17.5751 21.8215 17.5751C23.4613 17.5751 24.7647 18.8785 24.7647 20.5183Z" fill="white"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M21.8216 6.0966C20.4661 6.0966 19.3829 7.17975 19.3829 8.53524C19.3829 9.89072 20.4661 10.9739 21.8216 10.9739C23.177 10.9739 24.2602 9.89072 24.2602 8.53524C24.2602 7.17975 23.177 6.0966 21.8216 6.0966ZM18.9625 8.53524C18.9625 6.94754 20.2339 5.67615 21.8216 5.67615C23.4092 5.67615 24.6806 6.94754 24.6806 8.53524C24.6806 10.1229 23.4092 11.3943 21.8216 11.3943C20.2339 11.3943 18.9625 10.1229 18.9625 8.53524Z" fill="white"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M21.6954 13.875C21.3006 13.875 20.9806 14.1951 20.9806 14.5898C20.9806 14.9846 21.3007 15.3046 21.6954 15.3046C22.0902 15.3046 22.4102 14.9846 22.4102 14.5898C22.4102 14.1951 22.0902 13.875 21.6954 13.875ZM20.5602 14.5898C20.5602 13.9628 21.0684 13.4546 21.6954 13.4546C22.3224 13.4546 22.8306 13.9628 22.8306 14.5898C22.8306 15.2168 22.3224 15.725 21.6954 15.725C21.0684 15.725 20.5602 15.2168 20.5602 14.5898Z" fill="white"/>
+                    <path d="M10.5955 13.6648C13.3123 13.6648 15.5148 11.4624 15.5148 8.74549C15.5148 6.02863 13.3123 3.82617 10.5955 3.82617C7.8786 3.82617 5.67615 6.02863 5.67615 8.74549C5.67615 11.4624 7.8786 13.6648 10.5955 13.6648Z" fill="white"/>
+                    <path d="M10.5955 25.4375C13.3123 25.4375 15.5148 23.2351 15.5148 20.5182C15.5148 17.8013 13.3123 15.5989 10.5955 15.5989C7.8786 15.5989 5.67615 17.8013 5.67615 20.5182C5.67615 23.2351 7.8786 25.4375 10.5955 25.4375Z" fill="white"/>
+                    <path d="M10.5955 36.9579C13.3123 36.9579 15.5148 34.7554 15.5148 32.0386C15.5148 29.3217 13.3123 27.1193 10.5955 27.1193C7.8786 27.1193 5.67615 29.3217 5.67615 32.0386C5.67615 34.7554 7.8786 36.9579 10.5955 36.9579Z" fill="white"/>
+                </svg>
+                <p>Camera</p>
+                <h3>Our most advanced AI ProVisual Engine</h3>
+                <h4>
+                    12MP Front Camera <br>
+                    200MP Wide-Angle Camera
+                </h4>
+            </div>
+            <div class="card">
+                <svg xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 37 37" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M7.32296 5.78117C6.47152 5.78117 5.78129 6.4714 5.78129 7.32284V29.677C5.78129 30.5284 6.47152 31.2187 7.32296 31.2187H29.6771C30.5286 31.2187 31.2188 30.5284 31.2188 29.677V7.32284C31.2188 6.4714 30.5286 5.78117 29.6771 5.78117H7.32296ZM4.23962 7.32284C4.23962 5.61996 5.62008 4.2395 7.32296 4.2395H29.6771C31.38 4.2395 32.7605 5.61996 32.7605 7.32284V29.677C32.7605 31.3799 31.38 32.7603 29.6771 32.7603H7.32296C5.62008 32.7603 4.23962 31.3799 4.23962 29.677V7.32284Z" fill="white"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12.1229 11.5447C11.8036 11.5447 11.5448 11.8035 11.5448 12.1228V24.877C11.5448 25.1963 11.8036 25.4551 12.1229 25.4551H24.8771C25.1964 25.4551 25.4553 25.1963 25.4553 24.877V12.1228C25.4553 11.8035 25.1964 11.5447 24.8771 11.5447H12.1229ZM10.3885 12.1228C10.3885 11.1649 11.1651 10.3884 12.1229 10.3884H24.8771C25.835 10.3884 26.6115 11.1649 26.6115 12.1228V24.877C26.6115 25.8349 25.835 26.6114 24.8771 26.6114H12.1229C11.1651 26.6114 10.3885 25.8349 10.3885 24.877V12.1228Z" fill="white"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M27.8368 31.2188C28.2625 31.2188 28.6076 31.5639 28.6076 31.9896V34.6875C28.6076 35.1132 28.2625 35.4583 27.8368 35.4583C27.411 35.4583 27.0659 35.1132 27.0659 34.6875V31.9896C27.0659 31.5639 27.411 31.2188 27.8368 31.2188Z" fill="white"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M21.6123 31.2188C22.038 31.2188 22.3831 31.5639 22.3831 31.9896V34.6875C22.3831 35.1132 22.038 35.4583 21.6123 35.4583C21.1865 35.4583 20.8414 35.1132 20.8414 34.6875V31.9896C20.8414 31.5639 21.1865 31.2188 21.6123 31.2188Z" fill="white"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M15.3878 31.2188C15.8135 31.2188 16.1586 31.5639 16.1586 31.9896V34.6875C16.1586 35.1132 15.8135 35.4583 15.3878 35.4583C14.9621 35.4583 14.6169 35.1132 14.6169 34.6875V31.9896C14.6169 31.5639 14.9621 31.2188 15.3878 31.2188Z" fill="white"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M9.16329 31.2188C9.58901 31.2188 9.93412 31.5639 9.93412 31.9896V34.6875C9.93412 35.1132 9.58901 35.4583 9.16329 35.4583C8.73757 35.4583 8.39246 35.1132 8.39246 34.6875V31.9896C8.39246 31.5639 8.73757 31.2188 9.16329 31.2188Z" fill="white"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M1.54169 27.9854C1.54169 27.5597 1.8868 27.2146 2.31252 27.2146H5.01044C5.43616 27.2146 5.78127 27.5597 5.78127 27.9854C5.78127 28.4112 5.43616 28.7563 5.01044 28.7563H2.31252C1.8868 28.7563 1.54169 28.4112 1.54169 27.9854Z" fill="white"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M1.54169 21.6619C1.54169 21.2362 1.8868 20.8911 2.31252 20.8911H5.01044C5.43616 20.8911 5.78127 21.2362 5.78127 21.6619C5.78127 22.0877 5.43616 22.4328 5.01044 22.4328H2.31252C1.8868 22.4328 1.54169 22.0877 1.54169 21.6619Z" fill="white"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M1.54169 15.338C1.54169 14.9123 1.8868 14.5671 2.31252 14.5671H5.01044C5.43616 14.5671 5.78127 14.9123 5.78127 15.338C5.78127 15.7637 5.43616 16.1088 5.01044 16.1088H2.31252C1.8868 16.1088 1.54169 15.7637 1.54169 15.338Z" fill="white"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M1.54169 9.01449C1.54169 8.58877 1.8868 8.24365 2.31252 8.24365H5.01044C5.43616 8.24365 5.78127 8.58877 5.78127 9.01449C5.78127 9.44021 5.43616 9.78532 5.01044 9.78532H2.31252C1.8868 9.78532 1.54169 9.44021 1.54169 9.01449Z" fill="white"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M31.2188 27.9854C31.2188 27.5597 31.5639 27.2146 31.9896 27.2146H34.6875C35.1132 27.2146 35.4583 27.5597 35.4583 27.9854C35.4583 28.4112 35.1132 28.7563 34.6875 28.7563H31.9896C31.5639 28.7563 31.2188 28.4112 31.2188 27.9854Z" fill="white"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M31.2188 21.6619C31.2188 21.2362 31.5639 20.8911 31.9896 20.8911H34.6875C35.1132 20.8911 35.4583 21.2362 35.4583 21.6619C35.4583 22.0877 35.1132 22.4328 34.6875 22.4328H31.9896C31.5639 22.4328 31.2188 22.0877 31.2188 21.6619Z" fill="white"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M31.2188 15.338C31.2188 14.9123 31.5639 14.5671 31.9896 14.5671H34.6875C35.1132 14.5671 35.4583 14.9123 35.4583 15.338C35.4583 15.7637 35.1132 16.1088 34.6875 16.1088H31.9896C31.5639 16.1088 31.2188 15.7637 31.2188 15.338Z" fill="white"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M31.2188 9.01449C31.2188 8.58877 31.5639 8.24365 31.9896 8.24365H34.6875C35.1132 8.24365 35.4583 8.58877 35.4583 9.01449C35.4583 9.44021 35.1132 9.78532 34.6875 9.78532H31.9896C31.5639 9.78532 31.2188 9.44021 31.2188 9.01449Z" fill="white"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M27.8368 1.54163C28.2625 1.54163 28.6076 1.88674 28.6076 2.31246V5.01038C28.6076 5.4361 28.2625 5.78121 27.8368 5.78121C27.411 5.78121 27.0659 5.4361 27.0659 5.01038V2.31246C27.0659 1.88674 27.411 1.54163 27.8368 1.54163Z" fill="white"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M21.6123 1.54163C22.038 1.54163 22.3831 1.88674 22.3831 2.31246V5.01038C22.3831 5.4361 22.038 5.78121 21.6123 5.78121C21.1865 5.78121 20.8414 5.4361 20.8414 5.01038V2.31246C20.8414 1.88674 21.1865 1.54163 21.6123 1.54163Z" fill="white"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M15.3878 1.54163C15.8135 1.54163 16.1586 1.88674 16.1586 2.31246V5.01038C16.1586 5.4361 15.8135 5.78121 15.3878 5.78121C14.9621 5.78121 14.6169 5.4361 14.6169 5.01038V2.31246C14.6169 1.88674 14.9621 1.54163 15.3878 1.54163Z" fill="white"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M9.16329 1.54163C9.58901 1.54163 9.93412 1.88674 9.93412 2.31246V5.01038C9.93412 5.4361 9.58901 5.78121 9.16329 5.78121C8.73757 5.78121 8.39246 5.4361 8.39246 5.01038V2.31246C8.39246 1.88674 8.73757 1.54163 9.16329 1.54163Z" fill="white"/>
+                </svg>
+                <p>Processor</p>
+                <h3>The most powerful processor for Galaxy</h3>
+                <h4>
+                    Snapdragon® 8 Elite for <br>
+                    Galaxy
+                </h4>
+            </div>
+            <div class="card">
+                <svg xmlns="http://www.w3.org/2000/svg" width="37" height="37" viewBox="0 0 37 37" fill="none">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M19 0L19.9409 0.0889304C28.9201 0.937617 36.0624 8.07985 36.9111 17.0591L37 18H25.4064L25.2606 17.3203C24.6628 14.5325 22.4675 12.3372 19.6797 11.7394L19 11.5937V0ZM20.72 1.91647V10.2316C23.62 11.0959 25.9041 13.3801 26.7685 16.28H35.0835C33.9688 8.87997 28.12 3.03119 20.72 1.91647Z" fill="white"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M17.6615 0V11.3768L16.9945 11.5199C13.7719 12.2109 11.3561 15.0738 11.3561 18.5009C11.3561 22.4458 14.5541 25.6439 18.4991 25.6439C21.9261 25.6439 24.7891 23.228 25.4801 20.0054L25.6232 19.3384H37L36.9127 20.2617C36.0251 29.6524 28.1221 37 18.4991 37C8.28231 37 0 28.7176 0 18.5009C0 8.87794 7.34751 0.974883 16.7382 0.0872712L17.6615 0ZM15.9737 1.88063C7.88764 3.09859 1.68779 10.0752 1.68779 18.5009C1.68779 27.7855 9.21446 35.3122 18.4991 35.3122C26.9248 35.3122 33.9014 29.1123 35.1194 21.0262H26.9598C25.8733 24.6717 22.4993 27.3317 18.4991 27.3317C13.622 27.3317 9.66831 23.378 9.66831 18.5009C9.66831 14.5006 12.3283 11.1267 15.9737 10.0402V1.88063Z" fill="white"/>
+                </svg>
+                <p>Storage</p>
+                <h3>Plenty of space to store it all and more</h3>
+                <h4>
+                    1TB | 512GB | 256GB storage <br>
+                    12GB memory
+                </h4>
+            </div>
+        </div>
+    </section>
+    <section id="highlight">
+        <h1>Highlight</h2>
+        <div id="highlight-container">
+            <div>
+                <h3>Unveiling Performance</h3>
+                <iframe id="video" width="560" height="315" src="https://www.youtube.com/embed/JMnyNzr9KFw?si=zdpeDLcFcMuUtWVL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div>
+                <h3>Expert RAW</h3>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/_H0AO4ELMck?si=wpf-h3oswVUtkOEh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
