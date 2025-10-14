@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tribute Page</title>
+    <style>
+        img {
+            max-width: 100%;
+            display: block;
+            height: auto;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 30px auto;
+            padding: 15px;
+            border-radius: 5px;
+            background: #eee;
+            max-width: 800px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 0;
+        }
+
+        figure {
+            padding: 20px 40px;
+            background: rgb(255, 236, 191);
+            border-radius: 5px;
+        }
+
+        figcaption {
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        h2, figcaption {
+            text-align: center;
+        }
+
+        ul {
+            line-height: 1.6;
+            max-width: 80%;
+            margin: auto;
+            text-align: left;
+        }
+
+        #blockquote {
+            max-width: 80%;
+            margin: 20px auto;
+            padding: 10px 15px;
+            border: solid 2px #333;
+            border-radius: 5px;
+        }
+
+        cite {
+            display: block;
+            text-align: right;
+            margin-top: 10px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <main id="main">
+        <h1 id="title">Albert Einstein</h1>
+        <p>The most intelligent man the world has ever known</p>
+        <figure id="img-div">
+            <img src="Einstein_1921_by_F_Schmutzer.png" alt="EinsteinImg" id="image">
+            <figcaption id="img-caption">Albert Einstein in 1921</figcaption>
+        </figure>
+        <section id="tribute-info">
+            <h2>Here is some information about Einstein's life:</h2>
+            <ul>
+                <li>Albert Einstein was born 14 March 1879.</li>
+                <li>Albert Einstein was a German-born theoretical physicist who developed the theory of relativity, one of the two pillars of modern physics.</li>
+                <li>He is best known to the general public for his mass–energy equivalence formula E = mc2, which has been dubbed "the world's most famous equation".</li>
+                <li>He received the 1921 Nobel Prize in Physics "for his services to theoretical physics, and especially for his discovery of the law of the photoelectric effect", a pivotal step in the development of quantum theory.</li>
+                <li>He lived in Switzerland between 1895 and 1914, except for one year in Prague, and he received his academic diploma from the Swiss federal polytechnic school (later the Eidgenössische Technische Hochschule, ETH) in Zürich in 1900. He taught theoretical physics there between 1912 and 1914 before he left for Berlin.</li>
+                <li>Einstein published more than 300 scientific papers and more than 150 non-scientific works. His intellectual achievements and originality have made the word "Einstein" synonymous with "genius".</li>
+            </ul>
+            <div id="blockquote">
+                <blockquote cite="https://www.goodreads.com/author/quotes/9810.Albert_Einstein">
+                    "Life is like riding a bicycle. To keep your balance you must keep moving."
+                <cite>~~ Albert Einstein</cite>
+            </div>
+        </section>
+        <footer>
+            <span>Read more in </span>
+            <a href="https://en.wikipedia.org/wiki/Albert_Einstein" target="_blank" id="tribute-link">Wikipedia Page</a>
+        </footer>
+    </main>
+</body>
+</html>
