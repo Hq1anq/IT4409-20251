@@ -1,0 +1,21 @@
+[
+    { "cid":"SSH1141", "name":"Lịch sử Đảng cộng sản Việt Nam", "credits": 2 },
+    { "cid":"SSH1131", "name":"Chủ nghĩa xã hội khoa học", "credits": 2 },
+    { "cid":"SSH1151", "name":"Tư tưởng Hồ Chí Minh", "credits": 2 },
+    { "cid":"PH1120", "name":"Vật lý đại cương II", "credits": 3 },
+    { "cid":"PE2301", "name":"Bóng rổ 1", "credits": 0 },
+    { "cid":"MI3052", "name":"Nhập môn các phương pháp tối ưu", "credits": 2 },
+    { "cid":"MI2020", "name":"Xác suất thống kê", "credits": 3 },
+    { "cid":"ME3123", "name":"Thiết kế mỹ thuật công nghiệp", "credits": 2 },
+    { "cid":"IT3100", "name":"Lập trình hướng đối tượng", "credits": 2 },
+    { "cid":"IT3080", "name":"Mạng máy tính", "credits": 3 },
+    { "cid":"IT3030", "name":"Kiến trúc máy tính", "credits": 3 },
+    { "cid":"PE2261", "name":"Karatedo", "credits": 0 },
+    { "cid":"PE2251", "name":"Taekwondo 1", "credits": 0 },
+    { "cid":"MI1131", "name":"Giải tích III", "credits": 3 },
+    { "cid":"IT3160", "name":"Nhập môn Trí tuệ nhân tạo", "credits": 3 },
+    { "cid":"IT3090", "name":"Cơ sở dữ liệu", "credits": 3 },
+    { "cid":"IT3070", "name":"Nguyên lý hệ điều hành", "credits": 3 },
+    { "cid":"IT2030", "name":"Technical Writing and Presentation", "credits": 3 },
+    { "cid":"EM1180", "name":"Văn hóa kinh doanh và tinh thần khởi nghiệp", "credits":  2}
+]

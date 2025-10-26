@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tra cứu kết quả học tập</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Tra cứu kết quả học tập sinh viên</h1>
+
+  <div class="search-box">
+    <input type="text" id="sidInput" placeholder="Nhập mã số sinh viên...">
+    <button id="searchBtn">Tra cứu 🔍</button>
+    <p class="hint">
+      (20235067, 202423058, 202527643, 20221904, 20232102)
+    </p>
+  </div>
+
+  <div id="status"></div>
+  <div id="studentInfo"></div>
+
+  <table id="resultTable">
+    <thead>
+      <tr>
+        <th>Mã HP</th>
+        <th>Tên học phần</th>
+        <th>Số TC</th>
+        <th>Học kỳ</th>
+        <th>Điểm (10)</th>
+        <th>Điểm chữ</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+  <script src="script.js"></script>
+</body>
+</html>
