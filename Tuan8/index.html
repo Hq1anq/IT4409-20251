@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src='https://unpkg.com/react@18/umd/react.development.js'></script>
+  <script src='https://unpkg.com/react-dom@18/umd/react-dom.development.js'></script>
+  <script src='https://unpkg.com/@babel/standalone/babel.min.js'></script>
+
+  <title>React (CRUD)</title>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    function SearchForm({ onChangeValue }) {
+      return (
+        <input
+          type="text"
+          placeholder="Tìm theo name, username"
+          onChange={(e) => {
+            onChangeValue(e.target.value);
+          }}
+        />
+      );
+    }
+
+    function ResultTable({ keyword, user, onAdded }) {
+      const [users, setUsers] = React.useState([]);
+      const [loading, setLoading] = React.useState(true);
+
+      React.useEffect(() => {
+        fetch("https://jsonplaceholder.typicode.com/users")
+          .then((res) => res.json())
+          .then((data) => {
+            setUsers(data);
+            setLoading(false);
+          })
+          .catch((err) => {
+            console.log("Fetch error: ", err);
+            setLoading(false);
+          });
+      }, []);
+
+      const filteredUsers = users.filter(
+        (u) =>
+          u.name.toLowerCase().includes(keyword.toLowerCase()) ||
+          u.username.toLowerCase().includes(keyword.toLowerCase())
+      );
+
+      React.useEffect(() => {
+        if (user) {
+          setUsers((prev) => [...prev, { ...user, id: prev.length + 1 }]);
+          onAdded();
+        }
+      }, [user])
+
+      if (loading) {
+        return <p>Đang tải dữ liệu...</p>;
+      }
+
+      return (
+        <table border="1" cellPadding="10" style={{ borderCollapse: "collapse" }}>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Username</th>
+              <th>Email</th>
+              <th>City</th>
+              <th>Website</th>
+              <th>Hành động</th>
+            </tr>
+          </thead>
+          <tbody>
+            {filteredUsers.map((u) => (
+              <tr key={u.id}>
+                <td>{u.id}</td>
+                <td>{u.name}</td>
+                <td>{u.username}</td>
+                <td>{u.email}</td>
+                <td>{u.address.city}</td>
+                <td>{u.website}</td>
+                <td>
+                  <button onClick={() => editUser(u)}>Sửa</button>
+                  <button onClick={() => removeUser(u.id)}>Xóa</button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      );
+    }
+
+    function AddUser({ onAdd }) {
+      const [adding, setAdding] = React.useState(false);
+
+      const [user, setUser] = React.useState({
+        name: "",
+        username: "",
+        email: "",
+        address: { street: "", suite: "", city: "" },
+        phone: "",
+        website: "",
+      });
+
+      const handleChange = (e) => {
+        const { id, value } = e.target;
+        if (["street", "suite", "city"].includes(id)) {
+          // Update nested address
+          setUser({ ...user, address: { ...user.address, [id]: value } });
+        } else {
+          setUser({ ...user, [id]: value });
+        }
+      };
+
+      const handleAdd = () => {
+        if (user.name === "" || user.username === "") {
+          alert("Vui lòng nhập Name và Username!");
+          return;
+        }
+        // Truyền user mới lên App
+        onAdd(user);
+
+        // Reset form
+        setUser({
+          name: "",
+          username: "",
+          email: "",
+          address: { street: "", suite: "", city: "" },
+          phone: "",
+          website: "",
+        });
+        setAdding(false);
+      };
+
+      return (
+        <div className="form-section">
+          {!adding ? (
+            <button onClick={() => setAdding(true)}>Thêm người dùng mới</button>
+          ) : (
+            <div>
+              <div>
+                <input
+                  id="name"
+                  value={user.name}
+                  onChange={handleChange}
+                  placeholder="Name"
+                />
+                <input
+                  id="username"
+                  value={user.username}
+                  onChange={handleChange}
+                  placeholder="Username"
+                />
+              </div>
+              <div>
+                <input
+                  id="email"
+                  value={user.email}
+                  onChange={handleChange}
+                  placeholder="Email"
+                />
+                <input
+                  id="phone"
+                  value={user.phone}
+                  onChange={handleChange}
+                  placeholder="Phone"
+                />
+              </div>
+              <div>
+                <input
+                  id="street"
+                  value={user.address.street}
+                  onChange={handleChange}
+                  placeholder="Street"
+                />
+                <input
+                  id="suite"
+                  value={user.address.suite}
+                  onChange={handleChange}
+                  placeholder="Suite"
+                />
+                <input
+                  id="city"
+                  value={user.address.city}
+                  onChange={handleChange}
+                  placeholder="City"
+                />
+              </div>
+              <div>
+                <input
+                  id="website"
+                  value={user.website}
+                  onChange={handleChange}
+                  placeholder="Website"
+                />
+              </div>
+              <button onClick={handleAdd}>Thêm</button>
+              <button onClick={() => setAdding(false)}>Hủy</button>
+            </div>
+          )}
+        </div>
+      );
+    }
+
+    function App() {
+      const [kw, setKeyword] = React.useState("");
+      const [newUser, setNewUser] = React.useState(null);
+
+      return (
+        <div>
+          <h1>Quản lý người dùng</h1>
+
+          <SearchForm onChangeValue={setKeyword} />
+          <AddUser onAdd={setNewUser} />
+          <ResultTable
+            keyword={kw}
+            user={newUser}
+            onAdded={() => setNewUser(null)}
+          />
+        </div>
+      );
+    }
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(<App />);
+  </script>
+</body>
+
+</html>
