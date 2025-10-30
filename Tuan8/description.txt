@@ -1,0 +1,7 @@
+table được đặt trong div className table-container
+table-container và table đều được css:
+margin: 0 auto
+overide thuộc tính width của textbox search:
+.input-search {
+   width: 200px;
+}
